@@ -1,0 +1,6 @@
+git clone https://github.com/luminaxster/swe432-heroku-react.git
+cd swe432-heroku-react/
+git init && git remote set-url origin "https://github.com/luminaxster/clone.git"
+git push
+npm install
+npm run start
