@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 
 export default function Fetcher(props) {
-    const { classes, url } = props;
+    const { classes, url, options } = props;
     let [clicks, setClicks] = useState(0);
     const [response, setResponse] = useState(null);
 
