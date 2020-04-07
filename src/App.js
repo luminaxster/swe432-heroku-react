@@ -6,7 +6,7 @@ import Fetcher from './Fetcher';
 function App() {
   return (
     <div className="App">
-      <Fetcherurl={'https://randomuser.me/api/'}/>
+      <Fetcher url={'https://randomuser.me/api/'}/>
     </div>
   );
 }
