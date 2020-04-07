@@ -24,4 +24,5 @@ npm run start
 ```
 your local app should be running at ``` localhost:3000 ```.
 
-** Note:** Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your every time you make your changes to your code).
+### Note
+Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your every time you make your changes to your code).
