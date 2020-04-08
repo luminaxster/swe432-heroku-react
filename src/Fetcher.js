@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Skeleton from '@material-ui/lab/Skeleton';
 export default function Fetcher(props) {
-    const { classes, url } = props;
+    const { url } = props;
     let [clicks, setClicks] = useState(0);
     const [response, setResponse] = useState(null);
 
@@ -26,7 +26,7 @@ export default function Fetcher(props) {
             <Skeleton variant="rect" width={210} height={118} />
             <button onClick={doSomething} data-something="Default">
                 Default</button>
-            <p>{response && JSON.stringify(response) || 'waiting' }</p>
+            <p>{response? JSON.stringify(response) : 'waiting'}</p>
         </React.Fragment>
 
     );
