@@ -12,7 +12,7 @@ export default function Fetcher(props) {
         setResponse(json);
       }
       fetchData();
-    }, [clicks]);
+    }, [url, clicks]);
 
     const doSomething = function (event) {
         console.log(event.currentTarget.getAttribute('data-something'));
