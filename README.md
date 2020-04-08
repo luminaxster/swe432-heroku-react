@@ -38,7 +38,7 @@ your local app should be running at ``` localhost:3000 ```.
 Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your program and refresh your browser every time you make your changes to your code).
 
 ### Troubleshooting
-If you get a criptic error like ```throw er; // Unhandled 'error' event``` during ```npm install```, try removing the package-lock.json file and the node_modules folder, then try re-running the command. You can try these commands in youur shell too (assuming you are in the project's root folder):
+If you get a criptic error like ```throw er; // Unhandled 'error' event``` during ```npm install```, try removing the package-lock.json file and the node_modules folder, then try re-running the command. You can try these commands in your shell too (assuming you are in the project's root folder):
 
 ```
 rm package-lock.json
