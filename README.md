@@ -1,4 +1,5 @@
 # React App in Heroku
+Follow this tutorial get a React project deployed in Heroku, and running it your machine during development.
 ## Getting the repo and creating your own
 First, go your GitHub webpage and create a new empty repo, get the repo's url and replace the string "https:<your_repo>.git" below.
 Now in your shell:
@@ -25,7 +26,7 @@ npm run start
 your local app should be running at ``` localhost:3000 ```.
 
 ### Note
-Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your every time you make your changes to your code).
+Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your program and refresh your browser every time you make your changes to your code).
 
 # References
 [Creating a React app for Hook from scratch](https://github.com/mars/create-react-app-buildpack)
