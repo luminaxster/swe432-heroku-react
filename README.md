@@ -16,6 +16,13 @@ select <your_repo> from the list and enable automatic deploy.
 ``` https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz ```
 
 Pushing changes in your repo should automatically deploy your app.
+### Troubleshooting
+If during deployment, you logs show an error like   ```npm ERR! Cannot read property 'match' of undefined```, you need to clean your Heroku server's cache, follow these commands:
+```
+heroku plugins:install heroku-repo
+heroku repo:purge_cache -a <your_heroku_app_name>
+```
+Don't forget to replace ```<your_heroku_app_name>``` with your app's name. Now redeploy your app. More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache).
 
 ## Running locally
 Install node.js if you haven't already, and open a shell within the 'swe432-heroku-react' folder and run the commands:
@@ -27,6 +34,16 @@ your local app should be running at ``` localhost:3000 ```.
 
 ### Note
 Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your program and refresh your browser every time you make your changes to your code).
+
+### Troubleshooting
+If you get a criptic error like ```throw er; // Unhandled 'error' event``` during ```npm install```, try removing the package-lock.json file and the node_modules folder, then try re-running the command. You can try these commands in yout shell too:
+
+```
+rm package-lock.json
+rm yarn.lock
+rm -rf ./node_modules
+npm install
+```
 
 # References
 [Creating a React app for Hook from scratch](https://github.com/mars/create-react-app-buildpack)
