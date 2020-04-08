@@ -26,3 +26,16 @@ your local app should be running at ``` localhost:3000 ```.
 
 ### Note
 Run ``` npm install``` every time you add packages to your ```package.json```, and use ```npm run start``` every time you want to run your app locally (let this command running, it will re-run your every time you make your changes to your code).
+
+# References
+[Creating a React app for Hook from scratch](https://github.com/mars/create-react-app-buildpack)
+
+[Learning about React Hooks (watch Dan's video)](https://reactjs.org/docs/hooks-intro.html)
+[Fancy UI](https://material-ui.com/)
+[React Hook types](https://reactjs.org/docs/hooks-overview.html)
+[JS Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+[Async Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+[JS keyword Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+[A fetch API}(https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+[A URL to fetch for](https://randomuser.me/)
+
