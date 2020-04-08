@@ -28,7 +28,7 @@ heroku repo:purge_cache -a <your_heroku_app_name>
 ```
 Don't forget to replace ```<your_heroku_app_name>``` with your app's name, now redeploy your app.
 If the error shows up again, only use ```heroku repo:purge_cache -a <your_heroku_app_name>```.
-More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue form keep happening make sure step 2 changes are set in your Heroku app.
+More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 changes are set in your Heroku app.
 
 ## Running locally
 Install node.js if you haven't already, and open a shell within the 'swe432-heroku-react' folder and run the commands:
