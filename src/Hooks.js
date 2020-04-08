@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const aFunc = ()=>{};
+export const aFunc = ()=>({name: 'David'});
 export default function Hooks(props) {
     const {name} = props;
     let [clicks, setClicks] = useState(0);
