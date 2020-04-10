@@ -1,13 +1,49 @@
 import React from 'react';
-import './App.css';
-import Fetcher from './Fetcher';
-import Hooks, {aFunc} from './Hooks';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-function App() {
+import './App.css';
+import Fetcher from './components/Fetcher';
+import Hooks, {aFunc} from './components/Hooks';
+import ToggleButtons from './components/ToggleButtons';
+
+export const getLocationUrlData = () => {
+  return {
+      url:
+          process.env.PUBLIC_URL ||
+          `${window.location.origin}`,
+      hash: `${window.location.hash}`
+  };
+};
+export const servicePath ='/echo';
+
+function App(props) {
+  const [weekDay, setWeekDay] = React.useState("Monday");
   return (
-    <div className="App">
-      <Hooks name={aFunc().name}/>
-      <Fetcher url={'https://randomuser.me/api/'}/>
+    <div style={{flexGrow: 1}}>
+      <Grid 
+      container
+      direction="column"
+      justify="center"
+      alignItems="stretch"
+      spacing={2}
+      >
+        <Grid item xs>
+          <Paper elevation={1}>
+            <Hooks name={aFunc().name}/>
+            </Paper>
+        </Grid>
+        <Grid item xs>
+          <Paper elevation={1}>
+            <Fetcher  value={weekDay} url={`${getLocationUrlData().url}${servicePath}`}/>
+            </Paper>
+          </Grid>
+        <Grid item xs>
+          <Paper elevation={1}>
+            <ToggleButtons value={weekDay} onChange ={setWeekDay}/>
+          </Paper>
+          </Grid>
+      </Grid>
     </div>
   );
 }
