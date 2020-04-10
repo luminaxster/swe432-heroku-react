@@ -10,8 +10,9 @@ import ToggleButtons from './components/ToggleButtons';
 export const getLocationUrlData = () => {
   return {
       url:
-          process.env.BACKEND_PUBLIC_URL ||
-          `${window.location.origin}`,
+          process.env.NODE_ENV === 'production'?
+          'https://swe432tomcat.herokuapp.com'
+          :`${window.location.origin}`,
       hash: `${window.location.hash}`
   };
 };
