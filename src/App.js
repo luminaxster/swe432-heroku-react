@@ -10,7 +10,7 @@ import ToggleButtons from './components/ToggleButtons';
 export const getLocationUrlData = () => {
   return {
       url:
-          process.env.PUBLIC_URL ||
+          process.env.BACKEND_PUBLIC_URL ||
           `${window.location.origin}`,
       hash: `${window.location.hash}`
   };
