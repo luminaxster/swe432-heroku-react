@@ -14,7 +14,9 @@ Now go to your Heroku dashboard, create a new app and make these changes:
 select <your_repo> from the list and enable automatic deploy.
 
 Go to your app's settings:
+
 2. In Config Vars, reveal them, and add ```NODE_MODULES_CACHE``` with value ```false```.
+
 3.  Add the following url in build packs:
 ``` https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz ```
 
