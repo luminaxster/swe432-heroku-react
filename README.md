@@ -87,7 +87,7 @@ Await is a short-hand for resolving fetch(...).then(), so it will make the call 
 
  i. ```const [response, setResponse] = useState(null);```: This will re-run the functional Component Fetcher, now the useState hook has set response to ```{key1:"value1",key2:"value2"}```. Note that ```null``` is assigned only the first time the compenent is executed.  
 
- j. ```response?JSON.stringify(response):...```: Since response has ```{key1:"value1",key2:"value2"}```, **response?*** evaluate to ```true```, thus printing the following ```{"key1":"value1","key2":"value2"}``` in the browser.
+ j. ```response?JSON.stringify(response):...```: Since response has ```{key1:"value1",key2:"value2"}```, **response?** evaluate to ```true```, thus printing the following ```{"key1":"value1","key2":"value2"}``` in the browser.
 
 # References
 [Creating a React app for Hook from scratch](https://github.com/mars/create-react-app-buildpack)
