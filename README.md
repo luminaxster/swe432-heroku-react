@@ -59,6 +59,8 @@ We are working with a back-end and a front-end where the front-end client via a 
 The deployed solution ia available: [back-end service](https://swe432tomcat.herokuapp.com/echo), and [front-end client]( https://swe432-heroku-react.herokuapp.com/).
 
 ## Workflow
+this workflow uses two heroku apps in different repos, this one for the the front-end and [this one](https://github.com/luminaxster/swe432tomcat) for the back-end. The following workflow explains how they are used together:
+
 0. [The backend echo microservice](https://github.com/luminaxster/swe432tomcat/blob/master/src/main/java/servlet/EchoServlet.java):
 
  a. ```@WebServlet(name = "EchoServlet", urlPatterns = {"/echo"})```: Maps the URL yourwebsite.com/ **/echo** like in  https://swe432tomcat.herokuapp.com **/echo**.
