@@ -63,7 +63,7 @@ this workflow uses two heroku apps in different repos, this one for the the fron
 
 0. [The backend echo microservice](https://github.com/luminaxster/swe432tomcat/blob/master/src/main/java/servlet/EchoServlet.java):
 
- a. ```@WebServlet(name = "EchoServlet", urlPatterns = {"/echo"})```: Maps the URL yourwebsite.com/**echo** like in  https://swe432tomcat.herokuapp.com/**echo**.
+ a. ```@WebServlet(name = "EchoServlet", urlPatterns = {"/echo"})```: Maps the URL yourwebsite.com/**echo** like in  https://swe432tomcat.herokuapp.com/echo.
 
  b. ```protected void doPost (HttpServletRequest req, HttpServletResponse res) ...```: Servlet method for handling POST requests.
 
