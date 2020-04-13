@@ -73,7 +73,7 @@ this workflow uses two heroku apps in different repos, this one for the the fron
 
 1. [The front-end React app](https://github.com/luminaxster/swe432-heroku-react/blob/master/src/components/Fetcher.js):
 
-d. ```useEffect( ()=> {...  fetchData().catch(e=>{console.log(e)});}, [url, clicks]);```: This React hook will be trigger every time either of those variables change, including the first time they are assigned, afterwards, it will be triggered everytime the submit button is clicked.
+d. ```useEffect( ()=> {...  fetchData().catch(e=>{console.log(e)});}, [url, clicks]);```: This React hook will be trigger every time **url** or **clicks** change, including the first time they are assigned, afterwards, it will be triggered everytime the submit button is clicked.
 
 e. ```const fetchData= async()=>{...}```: This is the function called within the hook, it is asynchronous so when is called it does not block the UI until it finishes its payload, instead, it returns a promise, a wrapping object that executes the function in the background and offers a method to know when it is done. This method is then(), to which you can pass a function that will be called back once the promise finishes. We did not use the then() method directly, but catch(), which works the same way but when there is an error. In **d.** we passed one arrow function to catch when there is an error.
 
