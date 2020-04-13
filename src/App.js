@@ -7,11 +7,12 @@ import Fetcher from './components/Fetcher';
 import Hooks, {aFunc} from './components/Hooks';
 import ToggleButtons from './components/ToggleButtons';
 
+const publicURL = 'https://swe432tomcat.herokuapp.com';
 export const getLocationUrlData = () => {
   return {
       url:
           process.env.NODE_ENV === 'production'?
-          'https://swe432tomcat.herokuapp.com'
+          publicURL
           :`${window.location.origin}`,
       hash: `${window.location.hash}`
   };
