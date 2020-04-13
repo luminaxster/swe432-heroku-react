@@ -75,13 +75,13 @@ this workflow uses two heroku apps in different repos, this one for the the fron
  @Override
  protected void doPost (HttpServletRequest req, HttpServletResponse res) ...
  ```
- Standard eervlet method for handling POST requests.
+ Standard servlet method for handling POST requests.
 
  c. 
  ```Java
  out.print(new Gson().toJson(data));
  ```
- : Sends the data back to the client that look like  `{"key":"value"}`.
+ Sends `data` back to the client as a JSON formatted string like `"{"key":"value"}"`.
 
  
 
