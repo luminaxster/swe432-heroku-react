@@ -5,6 +5,9 @@ Follow this tutorial get a React project deployed in Heroku, and running it your
 
 If you are new to GitHub, Git, Heroku, or NPM, please follow this tutorial [first](https://github.com/luminaxster/swe432tomcat). 
 
+## SWE 432 Lecture 12 Presentation (fall 2020)
+Slides available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
+
 ## Getting the repo and creating your own
 First, go your GitHub webpage and create a new empty repo, get the repo's url and replace the string "https:<your_repo>.git" below.
 Now in your shell:
@@ -14,6 +17,7 @@ cd swe432-heroku-react/
 git init && git remote set-url origin "https:<your_repo>.git"
 git push
 ```
+
 Now go to your Heroku dashboard, create a new app and make these changes:
 1. Link your new repo, go to the app's deploy tab and choose "GitHub" deploy method,
 select <your_repo> from the list and enable automatic deploy.
