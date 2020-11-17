@@ -1,5 +1,10 @@
 # React App in Heroku
 Follow this tutorial get a React project deployed in Heroku, and running it your machine during development.
+
+## Prelude
+
+If you are new to GitHub, Git, Heroku, or NPM, please follow this tutorial [first](https://github.com/luminaxster/swe432tomcat). 
+
 ## Getting the repo and creating your own
 First, go your GitHub webpage and create a new empty repo, get the repo's url and replace the string "https:<your_repo>.git" below.
 Now in your shell:
