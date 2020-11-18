@@ -11,9 +11,10 @@ const publicURL = 'https://swe432tomcat.herokuapp.com';
 export const getLocationUrlData = () => {
   return {
       url:
-          process.env.NODE_ENV === 'production'?
+//           process.env.NODE_ENV === 'production'?
           publicURL
-          :`${window.location.origin}`,
+//           :`${window.location.origin}`
+,
       hash: `${window.location.hash}`
   };
 };
