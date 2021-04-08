@@ -164,7 +164,7 @@ After making the call to the server at **a.**, **b.** will start processing it, 
    response.json().then(thenCallback);
  })
  ```
- Once the fetch promises is completed, `response.json()` returns a promise with JSON data created in **c.**, then the result of `then()` (pun intended) will be assigned as the first parameter of the `thenCallback` function and be called, which should have the value `{city:"aCity",state:"aState"}`, based on what was sent in **(f.)**.
+ Once the fetch promises is completed, `response.json()` returns a promise with JSON data created in **c.**, then the result of `then()` (pun intended) will be assigned as the first parameter of the `thenCallback` function and be called, which should have the value `{city:"aCity",state:"aState"}`, based on what was sent in **(f.)**
 
  h.
  ```JSX
@@ -271,7 +271,7 @@ Await is a short-hand for resolving fetch(...).then(), so it will make the call 
  ```JSX
  const json = await res.json();
  ```
- `json` will be assigned the JSON data assembled in **c.**, where res.json() returns a promise, and similarly to **d.**, the result of then() will be assigned to the variable json, which should have the value {key1:"value1",key2:"value2"}, based on what was sent in `body`**(f.)**.
+ `json` will be assigned the JSON data assembled in **c.**, where res.json() returns a promise, and similarly to **d.**, the result of then() will be assigned to the variable json, which should have the value {key1:"value1",key2:"value2"}, based on what was sent in `body`**(f.)**
 
  h.
  ```JSX
@@ -292,12 +292,12 @@ Await is a short-hand for resolving fetch(...).then(), so it will make the call 
  Since response has `{key1:"value1",key2:"value2"}`, `response?` evaluate to `true`, thus printing the following `{"key1":"value1","key2":"value2"}` in the browser.
 
 # Bonus: Conditional Rendering
-React you can do conditional rendering, that is, depending on your app's state choose to show things or not. e.g.:
+Depending on your app's values you can decide which components to show. e.g.:
 ```JSX
-function Component(){.... return condition?<ComponentA/>: <ComponentB/>;}// you can return null, too.
+let Component = ()=>{.... return condition?<ComponentA/>: <ComponentB/>;}// you can return null, too.
 ```
 
-Similarly to step **j**, you can use response or another variable to keep track if the user clicks the submit button  and conditionally render components, for example, a form or result list. These are the relevant statements:
+Similar to Example 2's step **j**, you can use response or another variable to keep track if the user clicks the submit button and conditionally render components like a form or result list. These are the relevant statements:
 
 ```JSX
 function YourComponent(){
