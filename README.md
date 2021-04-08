@@ -19,26 +19,40 @@ Think of NPM as Maven for JavaScript, a platform that manages your project depen
 
 
 ## A. Getting the repo and creating your own
-First, go to your GitHub webpage and create a new empty repo, replace `<your_repo_URL>` with your repo's url (e.g. `https://github.com/<username>/<repo_name>.git`) in the following commands, and run them:
+
+### Go to your GitHub webpage:
+1. Create a new empty repo, and get its URL (e.g. `https://github.com/<your_username>/<your_new_repo_name>.git`).
+
+### Go to a terminal in your machine:
+
+2. Locate a directory where you want to clone this repo.
+
+3. Now replace `<your_new_repo_URL>` with your new repo's URL in the following commands, and run them:
 ```ShellSession
 git clone https://github.com/luminaxster/swe432-heroku-react.git
 cd swe432-heroku-react/
-git init && git remote set-url origin "<your_repo_URL>"
+git init && git remote set-url origin "<your_new_repo_URL>"
 git push
 ```
 
-Now go to your Heroku dashboard, create a new app and make these changes:
-1. Link your new repo, go to the app's deploy tab and choose "GitHub" deploy method,
-select `<your_repo>` from the list and enable automatic deploy.
+### Now go to your Heroku dashboard, create a new app and make these changes:
 
-Go to your app's settings:
+Go to your app's settings tab:
 
-2. In Config Vars, reveal them, and add `NODE_MODULES_CACHE` with value `false`.
+4. In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
 
-3.  Add the following url in build packs:
+5. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
 ```Http
 https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
 ```
+
+Go to your app's deploy tab:
+
+6. In Deploy method, choose `GitHub`.
+7. In Connect to GitHub, type your new repo name(`<your_new_repo_name>`) and search for it, and connect to it from the list.
+8. In Automatic deploys, enable automatic deploy.
+9. In Manual deploy, deploy the "master" branch.
+10. A build log will appear, once it finishes, a view option will appear in Depploy to Heroku. Now your app is deployed.
 
 ### Troubleshooting
 If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
