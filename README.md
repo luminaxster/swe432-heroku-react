@@ -39,7 +39,6 @@ Go to your app's settings:
 ```Http
 https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
 ```
-Pushing changes in your repo should automatically deploy your app.
 
 ### Troubleshooting
 If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
