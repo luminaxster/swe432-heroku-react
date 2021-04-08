@@ -10,9 +10,9 @@ Part 1 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/
 Parts 2 and 3 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
 
 ## Prelude
-This project aims to showcase a Single Page App (SPA) built using React, React offers a development environment to do so: Create React App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
+This project aims to showcase a Single Page App (SPA) built using React, React offers a zero configuration development environment to do so: Create React App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
 
-CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](https://babeljs.io/) to compile/transpile your code, and [Webpack](https://webpack.js.org/) to bundle your app.
+CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](https://babeljs.io/) to compile/transpile your code, and [Webpack](https://webpack.js.org/) to bundle your app. You do not have to worry about Babel or Webpack, CRA handles them (and other packages) for you.
 
 Think of NPM as Maven for JavaScript, a platform that manages your project dependencies based on a configuration, NPM's package.json is equivalent to Maven's POM.xml. NPM supports scripting so Babel and Webpack can be executed to build your app as a CRA. 
 
