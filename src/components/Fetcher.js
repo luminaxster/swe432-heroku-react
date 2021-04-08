@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import Skeleton from '@material-ui/lab/Skeleton';
-import { Paper, Button, Grid } from '@material-ui/core';
+import Skeleton from '@material-ui/core/Skeleton';
 
-export default function Fetcher(props) {
+const publicURL = 'https://swe432tomcat.herokuapp.com';
+const getLocationUrlData = () => {
+  return {
+      url:publicURL,
+      hash: `${window.location.hash}`
+  };
+};
+
+const servicePath ='/echo';
+
+function Fetcher(props) {
     const { url, value} = props;
-    let [clicks, setClicks] = useState(0);
+    const [clicks, setClicks] = useState(0);
     const [response, setResponse] = useState(null);
     const [inputValue, setInputValue] = useState("");
-    const body = `input=${inputValue}&weekDay=${value}`;
+    const body = `input=${inputValue}&value=${value}`;
 
-    const  fetchData= async()=>{
+    const  fetchData= useCallback(async()=>{
       const res = await fetch(url,
         {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -29,11 +41,14 @@ export default function Fetcher(props) {
       );
       const json = await res.json();
       setResponse(json);
-    }
+    },
+     [url, body]
+   );
+
     useEffect( ()=> {
       setResponse(null);
       fetchData().catch(e=>{console.log(e)});
-    }, [url, clicks]);
+    }, [fetchData]);
 
     const doSomething = function (event) {
         console.log(event.currentTarget.getAttribute('data-something'));
@@ -56,10 +71,10 @@ export default function Fetcher(props) {
             <Typography variant="h6">submits: {clicks}</Typography>
           </Grid>
             <Grid item xs>
-              <TextField 
+              <TextField
               label="Type something"
               helperText="This will be echo echo by the server"
-              value={inputValue} onChange={handleChange} inputProps={{ 'aria-label': 'description' }} />
+              value={inputValue} onChange={handleChange} />
             </Grid>
             <Grid item xs>
               <Button onClick={doSomething} variant="contained" color="primary" data-something="submit">
@@ -80,4 +95,11 @@ export default function Fetcher(props) {
         </Grid>
 
     );
+}
+
+
+export default function FetcherControlled(props) {
+  const url = `${getLocationUrlData().url}${servicePath}`;
+  
+  return  <Fetcher value={"someValue"} url={url}/>;
 }

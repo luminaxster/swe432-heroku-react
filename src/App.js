@@ -1,54 +1,82 @@
-import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import React, {useMemo, useState, useCallback} from 'react';
 
-import './App.css';
+import Box from '@material-ui/core/Box';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
 import Fetcher from './components/Fetcher';
 import Hooks, {aFunc} from './components/Hooks';
 import ToggleButtons from './components/ToggleButtons';
+import PopcornSales from './components/PopcornSales';
 
-const publicURL = 'https://swe432tomcat.herokuapp.com';
-export const getLocationUrlData = () => {
-  return {
-      url:
-//           process.env.NODE_ENV === 'production'?
-          publicURL
-//           :`${window.location.origin}`
-,
-      hash: `${window.location.hash}`
-  };
-};
-export const servicePath ='/echo';
+export default function App(props) {
+  const [currentTab, setCurrentTab] = useState(0);
+  const handleChangeCurrentTab = useCallback(
+    (event, newValue) => {
+      setCurrentTab(newValue);
+    },
+    []
+  );
 
-function App(props) {
-  const [weekDay, setWeekDay] = React.useState("Monday");
+  const {rootSX, tabsSX} = useMemo(
+    ()=>({
+      rootSX:{ flexGrow: 1 },
+      tabsSX: { borderBottom: 1, borderColor: 'divider' }
+    }),
+    []
+  );
+
   return (
-    <div style={{flexGrow: 1}}>
-      <Grid 
-      container
-      direction="column"
-      justify="center"
-      alignItems="stretch"
-      spacing={2}
-      >
-        <Grid item xs>
-          <Paper elevation={1}>
-            <Hooks name={aFunc().name}/>
-            </Paper>
-        </Grid>
-        <Grid item xs>
-          <Paper elevation={1}>
-            <Fetcher  value={weekDay} url={`${getLocationUrlData().url}${servicePath}`}/>
-            </Paper>
-          </Grid>
-        <Grid item xs>
-          <Paper elevation={1}>
-            <ToggleButtons value={weekDay} onChange ={setWeekDay}/>
-          </Paper>
-          </Grid>
-      </Grid>
-    </div>
+    <Box sx={rootSX}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div">
+              SWE 432 React examples
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={tabsSX}>
+        <Tabs value={currentTab} onChange={handleChangeCurrentTab}>
+          <Tab label="Popcorn Sales" />
+          <Tab label="Fetcher" />
+          <Tab label="Hooks" />
+          <Tab label="Toggle Buttons" />
+        </Tabs>
+      </Box>
+      <TabPanel value={currentTab} index={0}>
+        <PopcornSales />
+      </TabPanel>
+      <TabPanel value={currentTab} index={1}>
+        <Fetcher />
+      </TabPanel>
+      <TabPanel value={currentTab} index={2}>
+        {/*careful Icarus*/}
+        <Hooks name={aFunc().name} />
+      </TabPanel>
+      <TabPanel value={currentTab} index={3}>
+        <ToggleButtons />
+      </TabPanel>
+    </Box>
   );
 }
 
-export default App;
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          {children}
+        </Box>
+      )}
+    </div>
+  );
+}

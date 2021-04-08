@@ -1,8 +1,9 @@
 import React from "react";
-import ToggleButton from "@material-ui/lab/ToggleButton";
-import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from "@material-ui/core/ToggleButton";
+import ToggleButtonGroup from "@material-ui/core/ToggleButtonGroup";
 
-export default function ToggleButtons(props) {
+
+function ToggleWeekDay(props) {
   const {value, onChange} =props;
   const handleWeekDay = (event, newWeekDay)=>{
     onChange(newWeekDay);
@@ -38,4 +39,9 @@ export default function ToggleButtons(props) {
       </ToggleButton>
     </ToggleButtonGroup>
   );
+}
+
+export default function ToggleButtons(){
+    const [weekDay, setWeekDay] = React.useState("Monday");
+    return <ToggleWeekDay value={weekDay} onChange ={setWeekDay}/>;
 }
