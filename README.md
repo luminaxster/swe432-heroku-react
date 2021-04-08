@@ -1,17 +1,24 @@
 # React App in Heroku
-Follow this tutorial get a React project deployed in Heroku, and running it your machine during development.
-
-## Prelude
+Follow this tutorial to get a React project deployed in Heroku, and running locally in your machine during development.
 
 If you are new to GitHub, Git, Heroku, or NPM, please follow this tutorial [first](https://github.com/luminaxster/swe432tomcat).
 
+
 ## SWE 432 React Lecture slides (Spring 2021)
 Part 1 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec11-FrontEndRevisited.pptx).
+
 Parts 2 and 3 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
 
-## Getting the repo and creating your own
-First, go your GitHub webpage and create a new empty repo, get the repo's url and replace the string "https:<your_repo>.git" below.
-Now in your shell:
+## Prelude
+This project aims to showcase a Single Page App (SPA) built using React, React offers a development environment to do so: React Create App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
+
+CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](https://babeljs.io/) to compile/transpile your code, and [Webpack](https://webpack.js.org/) to bundle your app.
+
+Think of NPM as Maven for JavaScript, a platform that manages your project dependencies based on a configuration, NPM's package.json is equivalent to Maven's POM.xml. NPM supports scripting so Babel and Webpack can be executed to build your app as a CRA. 
+
+
+## A. Getting the repo and creating your own
+First, go to your GitHub webpage and create a new empty repo, and run these commands in a terminal (replace `"https:<your_repo>.git"` with your repo's url):
 ```ShellSession
 git clone https://github.com/luminaxster/swe432-heroku-react.git
 cd swe432-heroku-react/
@@ -21,7 +28,7 @@ git push
 
 Now go to your Heroku dashboard, create a new app and make these changes:
 1. Link your new repo, go to the app's deploy tab and choose "GitHub" deploy method,
-select <your_repo> from the list and enable automatic deploy.
+select `<your_repo>` from the list and enable automatic deploy.
 
 Go to your app's settings:
 
@@ -34,25 +41,24 @@ https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
 Pushing changes in your repo should automatically deploy your app.
 
 ### Troubleshooting
-If during deployment, you logs show an error like   `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, follow these commands:
+If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
 ```ShellSession
 heroku plugins:install heroku-repo
 heroku repo:purge_cache -a <your_heroku_app_name>
 ```
 Don't forget to replace `<your_heroku_app_name>` with your app's name, now redeploy your app.
 If the error shows up again, only use `heroku repo:purge_cache -a <your_heroku_app_name>`.
-More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 changes are set in your Heroku app.
+More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 change is set in your Heroku app.
 
-## Running locally
-Install node.js if you haven't already, and open a shell within the 'swe432-heroku-react' folder and run the commands:
+## B. Running locally
+Install node.js if you haven't already, and open a shell within the 'swe432-heroku-react' folder and run these commands:
 ```ShellSession
 npm install
 npm run start
 ```
 your local app should be running at `localhost:3000`.
 
-### Note
-Run `npm install` every time you add packages to your `package.json`, and use `npm run start` every time you want to run your app locally (let this command running, it will re-run your program and refresh your browser every time you make your changes to your code).
+**Note:** Run `npm install` every time you add packages to your `package.json`, and use `npm run start` every time you want to run your app locally. Let this command running, it will ***watch*** your code, that is, re-run your program and refresh your browser every time you make your changes to your code.
 
 ### Troubleshooting
 If you get a cryptic error like `throw er; // Unhandled 'error' event` during `npm install`, try removing the package-lock.json file and the node_modules folder, then try re-running the command. You can try these commands in your shell too (assuming you are in the project's root folder):
@@ -63,14 +69,14 @@ rm yarn.lock
 rm -rf ./node_modules
 npm install
 ```
-## Deploying your app
+## C. Deploying your app
 Same as before, you push your changes to your GitHub repo and Heroku will detect those changes and redeploy your app.
 
 # Getting the front-end and back-end to communicate
 We are working with a back-end and a front-end where the front-end client via a React app is making a request to a back-end Tomcat server. The server offers servlet as microservices, to which the client fetch data asynchronously to show in the browser.
 This involves **two** Heroku apps in different repos, this one for the the front-end and [this one](https://github.com/luminaxster/swe432tomcat) for the back-end. The following examples explain how they work together.
 
-# Example 1: Popcorn Sales
+## Example 1: Popcorn Sales
 
 The deployed solution is available: [back-end service](https://swe432tomcat.herokuapp.com/zipLookup), and [front-end client]( https://swe432-heroku-react.herokuapp.com/)( Popcorn Sales tab).
 
@@ -212,7 +218,7 @@ After making the call to the server at **a.**, **b.** will start processing it, 
  ```
 Now the city and state `input` elements will show the respective values to the user thanks to `value={addressCity}` and  `value={addressState}`.
 
-# Example 2: Fetcher (Optional)
+## Example 2: Fetcher (Optional)
 
 The deployed solution is available: [back-end service](https://swe432tomcat.herokuapp.com/echo), and [front-end client]( https://swe432-heroku-react.herokuapp.com/)( Fetcher tab).
 
