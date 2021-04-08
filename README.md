@@ -19,11 +19,11 @@ Think of NPM as Maven for JavaScript, a platform that manages your project depen
 
 
 ## A. Getting the repo and creating your own
-First, go to your GitHub webpage and create a new empty repo, and run these commands in a terminal (replace `"https:<your_repo>.git"` with your repo's url):
+First, go to your GitHub webpage and create a new empty repo, and run these commands in a terminal (replace `<your_repo_URL>` with your repo's url):
 ```ShellSession
 git clone https://github.com/luminaxster/swe432-heroku-react.git
 cd swe432-heroku-react/
-git init && git remote set-url origin "https:<your_repo>.git"
+git init && git remote set-url origin "<your_repo_URL>"
 git push
 ```
 
