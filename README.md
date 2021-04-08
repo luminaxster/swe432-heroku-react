@@ -10,7 +10,7 @@ Part 1 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/
 Parts 2 and 3 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
 
 ## Prelude
-This project aims to showcase a Single Page App (SPA) built using React, React offers a development environment to do so: React Create App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
+This project aims to showcase a Single Page App (SPA) built using React, React offers a development environment to do so: Create React App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
 
 CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](https://babeljs.io/) to compile/transpile your code, and [Webpack](https://webpack.js.org/) to bundle your app.
 
