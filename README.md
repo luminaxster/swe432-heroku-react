@@ -20,10 +20,10 @@ Think of NPM as Maven for JavaScript, a platform that manages your project depen
 
 ## A. Getting the repo and creating your own
 
-### Go to your GitHub webpage:
+### Go to your GitHub webpage
 1. Create a new empty repo, and get its URL (e.g. `https://github.com/<your_username>/<your_new_repo_name>.git`).
 
-### Go to a terminal in your machine:
+### Go to a terminal in your machine
 
 2. Locate a directory where you want to clone this repo.
 
@@ -34,36 +34,6 @@ cd swe432-heroku-react/
 git init && git remote set-url origin "<your_new_repo_URL>"
 git push
 ```
-
-### Now go to your Heroku dashboard, create a new app and make these changes:
-
-Go to your app's settings tab:
-
-4. In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
-
-5. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
-```Http
-https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
-```
-
-Go to your app's deploy tab:
-
-6. In Deploy method, choose `GitHub`.
-7. In Connect to GitHub, type your new repo name(`<your_new_repo_name>`) and search for it, and connect to it from the list.
-8. In Automatic deploys, enable automatic deploy.
-9. In Manual deploy, deploy the "master" branch.
-10. A build log will appear, once it finishes, a view option will appear in Depploy to Heroku. Now your app is deployed.
-
-### Troubleshooting
-If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
-```ShellSession
-heroku plugins:install heroku-repo
-heroku repo:purge_cache -a <your_heroku_app_name>
-```
-Don't forget to replace `<your_heroku_app_name>` with your app's name, now redeploy your app.
-If the error shows up again, only use `heroku repo:purge_cache -a <your_heroku_app_name>`.
-More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 change is set in your Heroku app.
-
 ## B. Running locally
 Install node.js if you haven't already, and open a shell within the 'swe432-heroku-react' folder and run these commands:
 ```ShellSession
@@ -83,8 +53,44 @@ rm yarn.lock
 rm -rf ./node_modules
 npm install
 ```
+
 ## C. Deploying your app
-Same as before, you push your changes to your GitHub repo and Heroku will detect those changes and redeploy your app.
+
+This is section is similar to what we did for the servlet project, the goal is to link this GitHub repo to Heroku so when you push your changes to the repo Heroku will detect those changes and redeploy your app.
+
+### Go to your Heroku dashboard
+
+4. In the main page, create a new app.
+
+Go to the app's settings tab:
+
+5. In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
+
+6. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
+```Http
+https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
+```
+
+Go to the app's deploy tab:
+
+7. In Deploy method, choose `GitHub`.
+8. In Connect to GitHub, type your new repo name(`<your_new_repo_name>`) and search for it, and connect to it from the list.
+9. In Automatic deploys, enable automatic deploy.
+10. In Manual deploy, deploy the "master" branch.
+11. A build log will appear, wait until it finishes building and deploying the app.
+12. In Deploy to Heroku, a view option will appear, it will open a browser tab with the public URL of the app.
+
+Your React app is now deployed.
+
+### Troubleshooting
+If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
+```ShellSession
+heroku plugins:install heroku-repo
+heroku repo:purge_cache -a <your_heroku_app_name>
+```
+Don't forget to replace `<your_heroku_app_name>` with your app's name, now redeploy your app.
+If the error shows up again, only use `heroku repo:purge_cache -a <your_heroku_app_name>`.
+More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 change is set in your Heroku app.
 
 # Getting the front-end and back-end to communicate
 We are working with a back-end and a front-end where the front-end client via a React app is making a request to a back-end Tomcat server. The server offers servlet as microservices, to which the client fetch data asynchronously to show in the browser.
