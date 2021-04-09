@@ -15,7 +15,7 @@ This project aims to showcase a Single Page App (SPA) built using React, React o
 
 CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](https://babeljs.io/) to compile/transpile your code, and [Webpack](https://webpack.js.org/) to bundle your app. You do not have to worry about Babel or Webpack, CRA handles them (and other packages) for you.
 
-Think of NPM as Maven for JavaScript, a platform that manages your project dependencies based on a configuration, NPM's package.json is equivalent to Maven's POM.xml. NPM supports scripting so Babel and Webpack can be executed to build your app as a CRA. 
+Think of NPM as Maven for JavaScript, a platform that manages your project dependencies based on a configuration, NPM's package.json is equivalent to Maven's POM.xml. NPM supports scripting so Babel and Webpack can be executed to build your app with CRA. 
 
 
 ## A. Getting the repo and creating your own
@@ -34,15 +34,21 @@ cd swe432-heroku-react/
 git init && git remote set-url origin "<your_new_repo_URL>"
 git push
 ```
-## B. Running locally
-Install node.js if you haven't already, and open a shell within the 'swe432-heroku-react' folder and run these commands:
+## B. Running your React app locally
+
+1. Install [NPM](https://nodejs.org/), it comes bundled with Node.js.
+
+2. Now open a terminal and locate the  `swe432-heroku-react/` folder and run these commands:
 ```ShellSession
 npm install
 npm run start
 ```
-your local app should be running at `localhost:3000`.
 
-**Note:** Run `npm install` every time you add packages to your `package.json`, and use `npm run start` every time you want to run your app locally. Let this command running, it will ***watch*** your code, that is, re-run your program and refresh your browser every time you make your changes to your code.
+Your local app should be running at `localhost:3000`.
+
+Use `npm run start` to run your app locally and let it running, it will ***watch*** for changes in your code and it will automatically re-bundle your app. You can refresh your browser tab and observe your latest changes.
+
+In the case of `npm install`, you only have to run it when you add packages to your `package.json`.
 
 ### Troubleshooting
 If you get a cryptic error like `throw er; // Unhandled 'error' event` during `npm install`, try removing the package-lock.json file and the node_modules folder, then try re-running the command. You can try these commands in your shell too (assuming you are in the project's root folder):
@@ -54,31 +60,31 @@ rm -rf ./node_modules
 npm install
 ```
 
-## C. Deploying your app
+## C. Deploying your React app
 
 This is section is similar to what we did for the servlet project, the goal is to link this GitHub repo to Heroku so when you push your changes to the repo Heroku will detect those changes and redeploy your app.
 
 ### Go to your Heroku dashboard
 
-4. In the main page, create a new app.
+1. In the main page, create a new app.
 
 Go to the app's settings tab:
 
-5. In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
+2. In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
 
-6. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
+3. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
 ```Http
 https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
 ```
 
 Go to the app's deploy tab:
 
-7. In Deploy method, choose `GitHub`.
-8. In Connect to GitHub, type your new repo name(`<your_new_repo_name>`) and search for it, and connect to it from the list.
-9. In Automatic deploys, enable automatic deploy.
-10. In Manual deploy, deploy the "master" branch.
-11. A build log will appear, wait until it finishes building and deploying the app.
-12. In Deploy to Heroku, a view option will appear, it will open a browser tab with the public URL of the app.
+4. In Deploy method, choose `GitHub`.
+5. In Connect to GitHub, type your new repo name(`<your_new_repo_name>`) and search for it, and connect to it from the list.
+6. In Automatic deploys, enable automatic deploy.
+7. In Manual deploy, deploy the "master" branch.
+8. A build log will appear, wait until it finishes building and deploying the app.
+9. In Deploy to Heroku, a view option will appear, it will open a browser tab with the public URL of the app.
 
 Your React app is now deployed.
 
