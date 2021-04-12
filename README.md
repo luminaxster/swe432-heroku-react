@@ -21,7 +21,10 @@ Think of NPM as Maven for JavaScript, a platform that manages your project depen
 ## A. Getting the repo and creating your own
 
 ### Go to your GitHub webpage
-1. Create a new empty repo, and get its URL (e.g. `https://github.com/<your_username>/<your_new_repo_name>.git`).
+1. Create a new empty repo, and get its URL, they look like this: 
+```
+https://github.com/<your_username>/<your_new_repo_name>.git
+```
 
 ### Go to a terminal in your machine
 
