@@ -39,9 +39,13 @@ git push
 ```
 ## B. Running your React app locally
 
+### Go to your browser
+
 1. Install [NPM](https://nodejs.org/), it comes bundled with Node.js.
 
-2. Now open a terminal and locate the  `swe432-heroku-react/` folder and run these commands:
+### Go to a terminal in your machine
+
+2. Locate the  `swe432-heroku-react/` folder and run these commands:
 ```ShellSession
 npm install
 npm run start
