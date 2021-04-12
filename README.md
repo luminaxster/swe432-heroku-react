@@ -113,7 +113,7 @@ This involves **two** Heroku apps in different repos, this one for the the front
 
 The deployed solution is available: [back-end service](https://swe432tomcat.herokuapp.com/zipLookup), and [front-end client]( https://swe432-heroku-react.herokuapp.com/)( Popcorn Sales tab).
 
-### [The backend echo microservice](https://github.com/luminaxster/swe432tomcat/blob/main/src/main/java/servlet/zipLookup.java):
+### [The backend zipLookup microservice](https://github.com/luminaxster/swe432tomcat/blob/main/src/main/java/servlet/zipLookup.java)
 
  a.
  ```Java
@@ -135,7 +135,7 @@ The deployed solution is available: [back-end service](https://swe432tomcat.hero
  Sends `data` back to the client as a JSON formatted string like `"{"key":"value"}"`.
 
 
-### [The front-end React app](https://github.com/luminaxster/swe432-heroku-react/blob/master/src/components/PopcornSales.js):
+### [The front-end React app](https://github.com/luminaxster/swe432-heroku-react/blob/master/src/components/PopcornSales.js)
 
 d.
 ```JSX
@@ -255,7 +255,7 @@ Now the city and state `input` elements will show the respective values to the u
 
 The deployed solution is available: [back-end service](https://swe432tomcat.herokuapp.com/echo), and [front-end client]( https://swe432-heroku-react.herokuapp.com/)( Fetcher tab).
 
-### [The backend echo microservice](https://github.com/luminaxster/swe432tomcat/blob/master/src/main/java/servlet/EchoServlet.java):
+### [The backend echo microservice](https://github.com/luminaxster/swe432tomcat/blob/master/src/main/java/servlet/EchoServlet.java)
 
  a.
  ```Java
@@ -278,7 +278,7 @@ The deployed solution is available: [back-end service](https://swe432tomcat.hero
 
 
 
-### [The front-end React app](https://github.com/luminaxster/swe432-heroku-react/blob/master/src/components/Fetcher.js):
+### [The front-end React app](https://github.com/luminaxster/swe432-heroku-react/blob/master/src/components/Fetcher.js)
 
 d.
 ```JSX
