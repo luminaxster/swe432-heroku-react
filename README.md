@@ -119,7 +119,7 @@ More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-ca
 # Getting the front-end and back-end to communicate
 In the following examples, front-end (this React project) components fetch data asynchronously from [back-end Tomcat](https://github.com/luminaxster/swe432tomcat) servlet microservices.
 
-For simplicity, the Java and React Heroku projects are in **separate** Heroku apps.
+For simplicity, the Tomcat and React Heroku projects are in **separate** Heroku apps.
 
 ## Example 1: Popcorn Sales
 
