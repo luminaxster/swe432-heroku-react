@@ -80,7 +80,7 @@ npm install
 
 ## C. Deploying your React app
 
-This is section is similar to what we did for the servlet project, the goal is to link this GitHub repo to Heroku so when you push your changes to the repo Heroku will detect those changes and redeploy your app.
+This is section is similar (not equal) to what we did for the servlet project, the goal is to link this GitHub repo to Heroku so when you push your changes to the repo Heroku will detect those changes and redeploy your app.
 
 ### Go to your Heroku dashboard
 
@@ -117,8 +117,9 @@ If the error shows up again, only use `heroku repo:purge_cache -a <your_heroku_a
 More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 change is set in your Heroku app.
 
 # Getting the front-end and back-end to communicate
-We are working with a back-end and a front-end where the front-end client via a React app is making a request to a back-end Tomcat server. The server offers servlet as microservices, to which the client fetch data asynchronously to show in the browser.
-This involves **two** Heroku apps in different repos, this one for the the front-end and [this one](https://github.com/luminaxster/swe432tomcat) for the back-end. The following examples explain how they work together.
+In the following examples, front-end (this React project) components fetch data asynchronously from [back-end Tomcat](https://github.com/luminaxster/swe432tomcat) servlet microservices.
+
+For simplicity, the Java and React Heroku projects are in **separate** Heroku apps.
 
 ## Example 1: Popcorn Sales
 
