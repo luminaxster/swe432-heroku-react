@@ -33,7 +33,7 @@ https://github.com/<your_username>/<your_new_repo_name>.git
 3. Now replace `<your_new_repo_URL>` with your new repo's URL in the following commands, and run them:
 ```ShellSession
 git clone https://github.com/luminaxster/swe432-heroku-react.git
-cd swe432-heroku-react/
+cd swe432-heroku-react
 git init && git remote set-url origin "<your_new_repo_URL>"
 git push
 ```
@@ -45,7 +45,7 @@ git push
 
 ### Go to a terminal in your machine
 
-2. Locate the  `swe432-heroku-react/` folder and run these commands:
+2. Locate the  `swe432-heroku-react` folder and run these commands:
 ```ShellSession
 npm install
 npm run start
@@ -58,12 +58,23 @@ Use `npm run start` to run your app locally and let it running, it will ***watch
 In the case of `npm install`, you only have to run it when you add packages to your `package.json`.
 
 ### Troubleshooting
-If you get a cryptic error like `throw er; // Unhandled 'error' event` during `npm install`, try removing the package-lock.json file and the node_modules folder, then try re-running the command. You can try these commands in your shell too (assuming you are in the project's root folder):
+If you get a cryptic error like `throw er; // Unhandled 'error' event` during `npm install`, try removing the package-lock.json file and the node_modules folder, then try re-running the command.
 
+Alternatively, open a terminal, locate your project's root folder, and run these commands:
+
+#### Unik-Like Systems
 ```ShellSession
 rm package-lock.json
 rm yarn.lock
 rm -rf ./node_modules
+npm install
+```
+
+#### Windows (PowerShell)
+```ShellSession
+rm package-lock.json
+rm yarn.lock
+rd -r .\node_modules
 npm install
 ```
 
