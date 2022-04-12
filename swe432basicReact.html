@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+  <div id="output">
+Hello!
+  </div>
+</body>
+<!-- Your custom script here -->
+<script type="text/babel">
+  // Functions
+  function z (x, y) { return x+y; }
+  z(1, 2);
+ // // Arrow Functions
+// const z = (x, y) => x+y;
+// z(1, 2);
+
+  // document.getElementById('output').innerHTML = "Hello World!";
+
+  // const App = () => <div> Hello World! </div>;
+  // ReactDOM.render(<App />, document.getElementById('output'));
+</script>
+
+</html>
