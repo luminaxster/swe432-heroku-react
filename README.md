@@ -88,11 +88,9 @@ This is section is similar (not equal) to what we did for the servlet project, t
 
 Go to the app's settings tab:
 
-2. In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
-
-3. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
+2. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
 ```Http
-https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
+https://github.com/mars/create-react-app-buildpack.git
 ```
 
 Go to the app's deploy tab:
@@ -115,6 +113,8 @@ heroku repo:purge_cache -a <your_heroku_app_name>
 Don't forget to replace `<your_heroku_app_name>` with your app's name, now redeploy your app.
 If the error shows up again, only use `heroku repo:purge_cache -a <your_heroku_app_name>`.
 More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 change is set in your Heroku app.
+
+Alternatively, you can clear the app's cache in your Heroku dashboard. Go to the app's settings tab In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
 
 # Getting the front-end and back-end to communicate
 In the following examples, front-end (this React project) components fetch data asynchronously from [back-end Tomcat](https://github.com/luminaxster/swe432tomcat) servlet microservices.
