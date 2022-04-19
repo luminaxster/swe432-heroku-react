@@ -5,7 +5,7 @@ If you are new to GitHub, Git, or Heroku, please follow this tutorial [first](ht
 
 Check the currently deployed version: [https://swe432-heroku-react.herokuapp.com](https://swe432-heroku-react.herokuapp.com).
 
-## SWE 432 React Lecture slides (Spring 2021)
+## SWE 432 React Lecture slides (Spring 2021-22)
 Part 1 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec11-FrontEndRevisited.pptx).
 
 Parts 2 and 3 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
