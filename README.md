@@ -116,7 +116,7 @@ Your React app is now deployed.
 ### Troubleshooting
 
 #### GitHub integration unavailable
-Heroku and Github can be integrated to automatically deploy your app (above). However, an `Unauthorized` error notification may show up in the dashboard. This issue have been [reported]((https://status.heroku.com/incidents/2413)) by Heroku (Thanks! anonyomous student from the spring 2022 class).
+Heroku and Github can be integrated to automatically deploy your app (above). However, an `Unauthorized` error notification may show up in the dashboard. This issue has been [reported](https://status.heroku.com/incidents/2413) by Heroku (Thanks! anonyomous student from the spring 2022 class).
 
 The solution is to use Heroku's Git service instead of GitHub's:
 
@@ -135,17 +135,18 @@ heroku login
 ```
 It will ask permission to open a browser tab to log you in. Return to the terminal once logged in.
 
-4. Obtain the name of the Heroku app yoiu want to migrate:
+4. Obtain the name of the Heroku app you want to migrate:
 ```shell
 heroku apps
 ```
 You will see your account email and a list of the names of the apps you have access to.
 
-5. Add Heroku Git as another repository in your chosen app's Git configuration:
+5. Add Heroku Git as another repository to your chosen app's Git configuration:
 ```shell
-heroku git:remote -a <<YOUR_HEROKU_APP_NAME>> 
+heroku git:remote -a YOUR_HEROKU_APP_NAME 
 ```
-you can locate the name
+Remember to replace `YOUR_HEROKU_APP_NAME` with the name of the app as shown in step 4.
+
 6. Check the effects of the previous commmand:
 ```shell
 git remote -v
