@@ -114,6 +114,54 @@ Go to the app's deploy tab:
 Your React app is now deployed.
 
 ### Troubleshooting
+
+#### GitHub integration unavailable
+Heroku and Github can be integrated to automatically deploy your app (above). However, an `Unauthorized` error notification may show up in the dashboard. This issue have been [reported]((https://status.heroku.com/incidents/2413)) by Heroku (Thanks! anonyomous student from the spring 2022 class).
+
+The solution is to use Heroku's Git service instead of GitHub's:
+
+1. Open a terminal and go to your GitHub repo's folder. 
+Unix-like users should use Terminal (MacOS), and Windows users CMD.  
+
+2. Check you are at the right location:
+```shell
+git status
+```
+You will receive a message starting with `On branch...`, otherwise, you are not on the right folder or Git has not been configured correctly.
+
+3. Log into your Heroku account if you haven't:
+```shell
+heroku login
+```
+It will ask permission to open a browser tab to log you in. Return to the terminal once logged in.
+
+4. Obtain the name of the Heroku app yoiu want to migrate:
+```shell
+heroku apps
+```
+You will see your account email and a list of the names of the apps you have access to.
+
+5. Add Heroku Git as another repository in your chosen app's Git configuration:
+```shell
+heroku git:remote -a <<YOUR_HEROKU_APP_NAME>> 
+```
+you can locate the name
+6. Check the effects of the previous commmand:
+```shell
+git remote -v
+```
+There should be two lines starting with `heroku`. Now you can pull and push changes to your Heroku Git repo, in addtion to your existign GitHub one.
+
+7. Push your changes to the new repo to deploy your app:
+```shell
+git add .
+git commit -am "Heroku's Git repo now available."
+git push heroku master
+```
+
+**Note:** Your GitHub repo is working as it should, we added support to do the same in Heroku. While the integration issue is open, please commit your changes to both repos: GitHub's to manage your codebase, and Heroku's to deploy your app's latest version. 
+
+#### Deployment errors
 If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
 ```ShellSession
 heroku plugins:install heroku-repo
