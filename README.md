@@ -10,6 +10,8 @@ Part 1 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/
 
 Parts 2 and 3 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
 
+## Prelude
+
 ### React Setup Types
 There are several ways to use React, or any front-end framework, for use in your web apps or talk about code. Depending on your goal, your setup may be different from what others use:
 
@@ -17,9 +19,9 @@ There are several ways to use React, or any front-end framework, for use in your
 
 - [Shareable executable code](https://codesandbox.io/s/swe-432-react-two-buttons-example-n3x50.) (AKA Pastebin): manages the environment for you (packages and project), and allows others to see your work online, however, they are mostly for conversations not for production.
 
-- [Production-ready code](https://github.com/luminaxster/swe432-heroku-react): the developer controls the app development and deployment, the app is within an environment where the packages and projects are managed by other software, as is expected in projects within companies. Next class will be about this setup type. 
+- [Production-ready code](https://github.com/luminaxster/swe432-heroku-react) (this repo): the developer controls the app development and deployment, the app is within an environment where the packages and projects are managed by other software, as is expected in projects within companies. Next class will be about this setup type. 
 
-## Prelude
+### Create React App Setup
 This project aims to showcase a Single Page App (SPA) built using React, React offers a zero configuration development environment to do so: Create React App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
 
 CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](https://babeljs.io/) to compile/transpile your code, and [Webpack](https://webpack.js.org/) to bundle your app. You do not have to worry about Babel or Webpack, CRA handles them (and other packages) for you.
@@ -151,7 +153,7 @@ Remember to replace `YOUR_HEROKU_APP_NAME` with the name of the app as shown in 
 ```shell
 git remote -v
 ```
-There should be two lines starting with `heroku`. Now you can pull and push changes to your Heroku Git repo, in addtion to your existign GitHub one.
+There should be two lines starting with `heroku`. Now you can pull and push changes to your Heroku Git repo, in addtion to your existing GitHub one.
 
 7. Push your changes to the new repo to deploy your app:
 ```shell
