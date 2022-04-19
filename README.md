@@ -59,12 +59,12 @@ git push
 2. Locate the  `swe432-heroku-react` folder and run these commands:
 ```ShellSession
 npm install
-npm run start
+npm run start-dev
 ```
 
 Your local app should be running at `localhost:3000`.
 
-Use `npm run start` to run your app locally and let it running, it will ***watch*** for changes in your code and it will automatically re-bundle your app. You can refresh your browser tab and observe your latest changes.
+Use `npm run start-dev` to run your app locally and let it running, it will ***watch*** for changes in your code and it will automatically re-bundle your app. You can refresh your browser tab and observe your latest changes.
 
 In the case of `npm install`, you only have to run it when you add packages to your `package.json`.
 
