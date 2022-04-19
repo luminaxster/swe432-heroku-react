@@ -10,6 +10,15 @@ Part 1 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/
 
 Parts 2 and 3 available [here](https://github.com/luminaxster/swe432-heroku-react/blob/master/432Lec12-FrontBackEndRevisited.pptx).
 
+### React Setup Types
+There are several ways to use React, or any front-end framework, for use in your web apps or talk about code. Depending on your goal, your setup may be different from what others use:
+
+- [Getting started code](https://github.com/luminaxster/swe432-heroku-react/blob/master/public/basic.html): uses hardcoded links to manage packages, quick to try libraries, yet, is not intended for production.
+
+- [Shareable executable code](https://codesandbox.io/s/swe-432-react-two-buttons-example-n3x50.) (AKA Pastebin): manages the environment for you (packages and project), and allows others to see your work online, however, they are mostly for conversations not for production.
+
+- [Production-ready code](https://github.com/luminaxster/swe432-heroku-react): the developer controls the app development and deployment, the app is within an environment where the packages and projects are managed by other software, as is expected in projects within companies. Next class will be about this setup type. 
+
 ## Prelude
 This project aims to showcase a Single Page App (SPA) built using React, React offers a zero configuration development environment to do so: Create React App ([CRA](https://reactjs.org/docs/create-a-new-react-app.html)). This project already has set up a CRA, so you can build upon it.
 
