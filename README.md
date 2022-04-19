@@ -161,6 +161,9 @@ git add .
 git commit -am "Heroku's Git repo now available."
 git push heroku master
 ```
+This step takes a while. It will show you the progress of your current deployment. If the deployment succedes, you will a line like this at the end: `remote:        https://YOUR_HEROKU_APP_NAME.herokuapp.com/ deployed to Heroku`. 
+
+Your React app is now deployed.
 
 **Note:** Your GitHub repo is working as it should, we added support to do the same in Heroku. While the integration issue is open, please commit your changes to both repos: GitHub's to manage your codebase, and Heroku's to deploy your app's latest version. 
 
