@@ -159,7 +159,7 @@ There should be two lines starting with `heroku`. Now you can pull and push chan
 ```shell
 git add .
 git commit -am "Heroku's Git repo now available."
-git push heroku master
+git push heroku
 ```
 This step takes a while. It will show you the progress of your current deployment. If the deployment succedes, you will a line like this at the end: `remote:        https://YOUR_HEROKU_APP_NAME.herokuapp.com/ deployed to Heroku`. 
 
