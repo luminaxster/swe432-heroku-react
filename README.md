@@ -32,20 +32,21 @@ Think of NPM as Maven for JavaScript, a platform that manages your project depen
 ## A. Getting the repo and creating your own
 
 ### Go to your GitHub webpage
-1. Create a new empty repo, and get its URL. It should look like this: 
+1. Create a new empty repo. Get its URL, `YOUR_NEW_REPO_URL`: 
 ```
-https://github.com/<your_username>/<your_new_repo_name>.git
+https://github.com/YOUR_USERNAME/YOUR_NEW_REPO_NAME.git
 ```
+**Note:** We will also use `YOUR_NEW_REPO_NAME` later on.
 
 ### Go to a terminal in your machine
 
 2. Locate a directory where you want to clone this repo.
 
-3. Now replace `<your_new_repo_URL>` with your new repo's URL in the following commands, and run them:
+3. Now replace `YOUR_NEW_REPO_URL` with your new repo's URL in the following commands, and run them:
 ```ShellSession
 git clone https://github.com/luminaxster/swe432-heroku-react.git
 cd swe432-heroku-react
-git init && git remote set-url origin "<your_new_repo_URL>"
+git init && git remote set-url origin "YOUR_NEW_REPO_URL"
 git push
 ```
 ## B. Running your React app locally
@@ -99,7 +100,7 @@ This is section is similar (not equal) to what we did for the servlet project, t
 
 Go to the app's settings tab:
 
-2. In Buildpacks, add a new buildpack, and save changes after entering the following buildpack URL:
+2. In Buildpacks, add a **new buildpack**, and save changes after entering the following buildpack URL:
 ```Http
 https://github.com/mars/create-react-app-buildpack.git
 ```
@@ -107,9 +108,9 @@ https://github.com/mars/create-react-app-buildpack.git
 Go to the app's deploy tab:
 
 4. In Deploy method, choose `GitHub`.
-5. In Connect to GitHub, type your new repo name(`<your_new_repo_name>`) and search for it, and connect to it from the list.
+5. In Connect to GitHub, type your new repo name(`YOUR_NEW_REPO_NAME`) and search for it, and connect to it from the list.
 6. In Automatic deploys, enable automatic deploy.
-7. In Manual deploy, deploy the "master" branch.
+7. In Manual deploy, deploy the `main` (or `master` if applicable) branch.
 8. A build log will appear, wait until it finishes building and deploying the app.
 9. In Deploy to Heroku, a view option will appear, it will open a browser tab with the public URL of the app.
 
@@ -137,7 +138,7 @@ heroku login
 ```
 It will ask permission to open a browser tab to log you in. Return to the terminal once logged in.
 
-4. Obtain the name of the Heroku app you want to migrate:
+4. Obtain the name, `YOUR_HEROKU_APP_NAME`, of the Heroku app you want to migrate:
 ```shell
 heroku apps
 ```
@@ -171,10 +172,10 @@ Your React app is now deployed.
 If during deployment, your logs show an error like  `npm ERR! Cannot read property 'match' of undefined`, you need to clean your Heroku server's cache, run these commands:
 ```ShellSession
 heroku plugins:install heroku-repo
-heroku repo:purge_cache -a <your_heroku_app_name>
+heroku repo:purge_cache -a YOUR_HEROKU_APP_NAME
 ```
-Don't forget to replace `<your_heroku_app_name>` with your app's name, now redeploy your app.
-If the error shows up again, only use `heroku repo:purge_cache -a <your_heroku_app_name>`.
+Don't forget to replace `YOUR_HEROKU_APP_NAME` with your app's name, now redeploy your app.
+If the error shows up again, only use `heroku repo:purge_cache -a YOUR_HEROKU_APP_NAME`.
 More details [here](https://help.heroku.com/18PI5RSY/how-do-i-clear-the-build-cache). To stop this issue from keep happening make sure step 2 change is set in your Heroku app.
 
 Alternatively, you can clear the app's cache in your Heroku dashboard. Go to the app's settings tab In Config Vars, reveal them, and add the key `NODE_MODULES_CACHE` with value `false`.
