@@ -74,7 +74,7 @@ git add . & git commit -am "Another Heroku Git push" & git push heroku
 ```
 
 #### Aplication Error Troubleshooting
-If you see a `H10` in your Heroku logs or an `Application Error` on your web app. Similarly, you will see a log line like this after pushing your changes via terminal:
+If you see an `Application Error` on your web app, a `H10` in your Heroku logs, or line like this after pushing your changes via terminal:
 ```ShellSession
  sh: 1: react-scripts: not found
 ```
