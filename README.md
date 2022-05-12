@@ -74,13 +74,11 @@ git add . & git commit -am "Another Heroku Git push" & git push heroku
 ```
 
 #### Aplication Error Troubleshooting
-If you see a `H10` in your logs or an `Application Error` on your web app. 
-Similarly, your CRA builpack is missing, you will see a log line like this:
+If you see a `H10` in your Heroku logs or an `Application Error` on your web app. Similarly, you will see a log line like this after pushing your changes via terminal:
 ```ShellSession
  sh: 1: react-scripts: not found
 ```
-
-To fix the issue, add the missing buildpack via [dashboard](https://github.com/luminaxster/swe432-heroku-react#go-to-your-heroku-dashboard) or command line: 
+The [CRA builpack](https://github.com/mars/create-react-app-buildpack.git) is missing. To fix the issue, add the missing buildpack via [dashboard](https://github.com/luminaxster/swe432-heroku-react#go-to-your-heroku-dashboard), or on a terminal with: 
 ```ShellSession
 heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git -a YOUR_APP_NAME
 ```
