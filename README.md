@@ -28,6 +28,60 @@ CRA uses [NPM](https://docs.npmjs.com/about-npm) to manage the project, [Babel](
 
 Think of NPM as Maven for JavaScript, a platform that manages your project dependencies based on a configuration, NPM's package.json is equivalent to Maven's POM.xml. NPM supports scripting so Babel and Webpack can be executed to build your app with CRA. 
 
+## 2. Quick Reference
+These command line statements are here for a quick reminder of details in the tutorial. Preferably, Use them if you have read this guide before.
+
+### Redeploying the app by pushing changes to the GitHub remote repo
+```ShellSession
+git a . & git c -m "TODO: I really should explain these changes" & git push
+```
+
+### Running your app locally (automatically, it will rerun your app everytime you save code changes)
+```ShellSession
+npm run start-dev
+```
+
+### Heroku Git deployment
+Go to [Heroku](https://dashboard.heroku.com/apps) and create a new app (remember the name of the app). I chose `swe432-heroku-react-2`.
+
+Follow these commands in your terminal, replace `swe432-heroku-react-2` with your app's name:
+
+```ShellSession
+git clone https://github.com/luminaxster/swe432-heroku-react.git
+cd swe432-heroku-react/
+heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git -a swe432-heroku-react-2
+heroku git:remote -a swe432-heroku-react-2
+git add .
+git commit -am "first Heroku Git push"
+git push heroku
+```
+You will see your deployment logs in your terminal. At the end, make sure you see these lines:
+```ShellSession
+remote:        [INFO] BUILD SUCCESS
+...
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+...
+remote: -----> Launching...
+remote:        Released v5
+remote:        https://swe432tomcat2.herokuapp.com/ deployed to Heroku
+```
+**Your most recent web app version in now deployed. You are all set. =)**
+
+From now on, if you want to redeploy you app with the latest version of your code, rerun these commands:
+```shell
+git add . & git commit -am "Another Heroku Git push" & git push heroku
+```
+
+### Aplication Error Troubleshooting
+If, somehow, your CRA builpack is missing, you will see a log line like this:
+```ShellSession
+ sh: 1: react-scripts: not found
+```
+Make sure the its location and content matches this repos's. The push the changes.
+Similarly, if you see a `H10` in your logs or an Application Error on your web app. 
+
+Add the the missing buildpack: `heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git -a swe432-heroku-react-2`.
 
 ## A. Getting the repo and creating your own
 
