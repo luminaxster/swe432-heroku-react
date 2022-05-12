@@ -73,7 +73,7 @@ From now on, if you want to redeploy you app with the latest version of your cod
 git add . & git commit -am "Another Heroku Git push" & git push heroku
 ```
 
-### Aplication Error Troubleshooting
+#### Aplication Error Troubleshooting
 If you see a `H10` in your logs or an `Application Error` on your web app. 
 Similarly, your CRA builpack is missing, you will see a log line like this:
 ```ShellSession
