@@ -57,31 +57,33 @@ git push heroku
 ```
 You will see your deployment logs in your terminal. At the end, make sure you see these lines:
 ```ShellSession
-remote:        [INFO] BUILD SUCCESS
-...
-remote: -----> Discovering process types
-remote:        Procfile declares types -> web
+remote: -----> Build succeeded!
+remote: =====> Downloading Buildpack: https://github.com/mars/create-react-app-inner-buildpack.git#v9.0.0
+remote: =====> Detected Framework: React.js (create-react-app)
+
 ...
 remote: -----> Launching...
-remote:        Released v5
-remote:        https://swe432tomcat2.herokuapp.com/ deployed to Heroku
+remote:        Released v4
+remote:        https://swe432-heroku-react-2.herokuapp.com/ deployed to Heroku
 ```
 **Your most recent web app version in now deployed. You are all set. =)**
 
 From now on, if you want to redeploy you app with the latest version of your code, rerun these commands:
-```shell
+```ShellSession
 git add . & git commit -am "Another Heroku Git push" & git push heroku
 ```
 
 ### Aplication Error Troubleshooting
-If, somehow, your CRA builpack is missing, you will see a log line like this:
+If you see a `H10` in your logs or an `Application Error` on your web app. 
+Similarly, your CRA builpack is missing, you will see a log line like this:
 ```ShellSession
  sh: 1: react-scripts: not found
 ```
-Make sure the its location and content matches this repos's. The push the changes.
-Similarly, if you see a `H10` in your logs or an Application Error on your web app. 
 
-Add the the missing buildpack: `heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git -a swe432-heroku-react-2`.
+To fix the issue, add the missing buildpack via [dashboard](https://github.com/luminaxster/swe432-heroku-react#go-to-your-heroku-dashboard) or command line: 
+```ShellSession
+heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git -a YOUR_APP_NAME
+```
 
 ## A. Getting the repo and creating your own
 
