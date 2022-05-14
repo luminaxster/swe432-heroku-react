@@ -33,7 +33,7 @@ These command line statements are here for a quick reminder of details in the tu
 
 ### Redeploying the app by pushing changes to the GitHub remote repo
 ```ShellSession
-git a . & git c -m "TODO: I really should explain these changes" & git push
+git a . && git c -m "TODO: I really should explain these changes" && git push
 ```
 
 ### Running your app locally (automatically, it will rerun your app everytime you save code changes)
@@ -70,7 +70,7 @@ remote:        https://swe432-heroku-react-2.herokuapp.com/ deployed to Heroku
 
 From now on, if you want to redeploy you app with the latest version of your code, rerun these commands:
 ```ShellSession
-git add . & git commit -am "Another Heroku Git push" & git push heroku
+git add . && git commit -am "Another Heroku Git push" && git push heroku
 ```
 
 #### Aplication Error Troubleshooting
